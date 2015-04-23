@@ -1,12 +1,11 @@
 class Fixnum
 
-  quarter = 0
-  dime = 0
-  nickel = 0
-  penny = 0
-
   define_method(:coin_combo) do
     total = self
+    quarter = 0
+    dime = 0
+    nickel = 0
+    penny = 0
 
     while total >= 25
       total = total - 25
@@ -28,5 +27,6 @@ class Fixnum
       penny += 1
     end
     "Quarter: #{quarter}, Dime: #{dime}, Nickel: #{nickel}, Penny: #{penny}"
+
   end
 end
