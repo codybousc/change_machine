@@ -1,10 +1,32 @@
-class Float
+class Fixnum
+
+  quarter = 0
+  dime = 0
+  nickel = 0
+  penny = 0
+
   define_method(:coin_combo) do
-  coins = {'quarter' => 0, 'dimes' => 0, 'nickels' => 0, 'pennies' => 0}
+    total = self
 
-    remainder = self % 0.25
-    quarter_result = self / 0.25
-    coins['quarter'] = quarter_result
+    while total >= 25
+      total = total - 25
+      quarter += 1
+    end
+
+    while total >= 10
+      total = total - 10
+      dime += 1
+    end
+
+    while total >= 5
+      total = total -5
+      nickel += 1
+    end
+
+    while total >= 1
+      total = total -1
+      penny += 1
+    end
+    "Quarter: #{quarter}, Dime: #{dime}, Nickel: #{nickel}, Penny: #{penny}"
   end
-
 end
